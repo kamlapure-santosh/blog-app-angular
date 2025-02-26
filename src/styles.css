@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* src/styles.css */
+body {
+    padding-top: 5px;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    margin-right: 15px;
+  }
+  
+  .btn-outline-danger {
+    margin-left: auto;
+  }
+  

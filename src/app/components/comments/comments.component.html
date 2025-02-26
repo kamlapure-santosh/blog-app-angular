@@ -1,0 +1,23 @@
+<!-- src/app/components/comments/comments.component.html -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Comments</h2>
+      <div *ngIf="comments && comments.length > 0; else noComments">
+        <div class="card mb-3" *ngFor="let comment of comments">
+          <div class="card-body">
+            <p class="card-text">{{ comment.comment }}</p>
+          </div>
+        </div>
+      </div>
+      <ng-template #noComments>
+        <p>No comments available.</p>
+      </ng-template>
+      <a
+        [routerLink]="['/blog-posts', postId, 'create-comment']"
+        class="btn btn-primary"
+        >Add Comment</a
+      >
+    </div>
+  </div>
+</div>
