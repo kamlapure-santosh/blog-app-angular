@@ -2,16 +2,37 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-12">
-      <h2>My Blog Posts</h2>
-      <div class="card mb-3" *ngFor="let post of myBlogPosts">
-        <div class="card-body">
-          <h3 class="card-title">{{ post.title }}</h3>
-          <p class="card-text">{{ post.content }}</p>
-          <a
-            [routerLink]="['/blog-posts', post.id, 'comments']"
-            class="btn btn-primary"
-            >View Comments</a
-          >
+      <h2 class="text-center mb-4">My Thoughts</h2>
+      <div class="card mb-4 blog-post-card" *ngFor="let post of myBlogPosts">
+        <div class="row no-gutters">
+          <div class="col-md-4 p-4">
+            <img
+              *ngIf="post.image"
+              [src]="getImageSrc(post.image)"
+              alt="Blog Post Image"
+              class="img-fluid blog-post-image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h3 class="card-title">{{ post.title }}</h3>
+              <p class="card-text">{{ post.content }}</p>
+              <p class="card-text">
+                <small class="text-muted">
+                  Category: <b>{{ post.categoryName }}</b>
+                </small>
+                <small class="text-muted">
+                  &nbsp; | Date:
+                  {{ post.createdDate | date : "medium" }}</small
+                >
+              </p>
+              <a
+                [routerLink]="['/blog-posts', post.id, 'comments']"
+                class="btn btn-primary view-comments-btn"
+                >View Comments</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>

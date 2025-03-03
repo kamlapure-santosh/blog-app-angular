@@ -32,4 +32,11 @@ export class MyBlogPostsComponent implements OnInit {
       },
     });
   }
+
+  getImageSrc(image: Uint8Array | null): string {
+    if (!image || image.length === 0) {
+      return '';
+    }
+    return `data:image/jpeg;base64,${image}`;
+  }
 }

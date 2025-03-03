@@ -32,6 +32,7 @@ export class CreateCommentComponent {
       id: 0,
       comment: this.content,
       userId: 0,
+      commentedBy: '',
       blogPostId: parseInt(this.postId),
     };
     this.commentService.createComment(this.postId, newComment).subscribe({

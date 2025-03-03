@@ -1,7 +1,10 @@
 <!-- src/app/app.component.html -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/blog-posts">BlogApp</a>
+    <a class="navbar-brand" routerLink="/blog-posts">
+      <img src="logo.jpeg" alt="Logo" style="height: 50px" />
+      Thought Stream
+    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -16,18 +19,24 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/blog-posts">All Blog Posts</a>
+          <a class="nav-link" routerLink="/blog-posts">Everyones Thoughts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/my-blog-posts">My Blog Posts</a>
+          <a class="nav-link" routerLink="/my-blog-posts">My Thoughts</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/create-blog-post"
-            >Create Blog Post</a
+            >Create a Thought</a
           >
         </li>
       </ul>
-      <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+      <button
+        *ngIf="isLoggedIn"
+        class="btn btn-outline-danger"
+        (click)="logout()"
+      >
+        {{ txtLogged }}
+      </button>
     </div>
   </div>
 </nav>
