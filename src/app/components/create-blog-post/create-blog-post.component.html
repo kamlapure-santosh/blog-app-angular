@@ -4,10 +4,27 @@
     <div class="col-md-8">
       <div class="card">
         <div class="card-header">
-          <h2>Create Blog Post</h2>
+          <h2>Create new thought post</h2>
         </div>
         <div class="card-body">
           <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="category">Category:</label>
+              <select
+                id="category"
+                class="form-control"
+                [(ngModel)]="selectedCategoryId"
+                name="category"
+                required
+              >
+                <option
+                  *ngFor="let category of categories"
+                  [value]="category.id"
+                >
+                  {{ category.categoryName }}
+                </option>
+              </select>
+            </div>
             <div class="form-group">
               <label for="title">Title:</label>
               <input
@@ -28,6 +45,15 @@
                 name="content"
                 required
               ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="image">Image:</label>
+              <input
+                type="file"
+                id="image"
+                class="form-control"
+                (change)="onFileSelected($event)"
+              />
             </div>
             <button type="submit" class="btn btn-primary mt-3">Create</button>
           </form>

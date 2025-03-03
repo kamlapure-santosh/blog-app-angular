@@ -18,4 +18,64 @@ body {
   .btn-outline-danger {
     margin-left: auto;
   }
-  
+
+ .container {
+  max-width: 900px;
+}
+
+.blog-post-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.blog-post-image {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.blog-post-image:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+.view-comments-btn {
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: #fff;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.view-comments-btn:hover {
+  background-color: #0056b3;
+}
+.blog-post-image-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}

@@ -6,7 +6,14 @@
       <div *ngIf="comments && comments.length > 0; else noComments">
         <div class="card mb-3" *ngFor="let comment of comments">
           <div class="card-body">
-            <p class="card-text">{{ comment.comment }}</p>
+            <p class="card-text">
+              {{ comment.comment }}
+            </p>
+            <p>
+              <small class="text-muted">
+                Commented By: <b>{{ comment.commentedBy }}</b>
+              </small>
+            </p>
           </div>
         </div>
       </div>
